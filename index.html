@@ -1,226 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>Untitled</title>
-    
-
-  </head>
-    
-  <body>
-  <!DOCTYPE html>
 <html lang="si">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aura iot-iamv | Secure Access</title>
+    <title>Service Discontinued - Aura IoT</title>
     <style>
-        :root {
-            --bg-color: #000b18;
-            --card-bg: rgba(255, 255, 255, 0.05);
-            --accent-blue: #00a2ff;
-            --text-white: #ffffff;
-        }
-
-        body, html {
-            margin: 0; padding: 0;
-            height: 100%; width: 100%;
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-color);
-            display: flex; justify-content: center; align-items: center;
-            overflow: hidden;
-        }
-
-        /* 1. Splash Screen */
-        #splash-screen {
-            position: fixed;
-            width: 100%; height: 100vh;
-            background: radial-gradient(circle, #001a33 0%, #000b18 100%);
-            display: flex; flex-direction: column;
-            justify-content: center; align-items: center;
-            z-index: 1000;
-            transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .logo-text {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: var(--text-white);
-            letter-spacing: 8px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            text-shadow: 0 0 20px rgba(0, 162, 255, 0.5);
-            animation: fadeInOut 2s infinite alternate;
-        }
-
-        .loader-wrap {
-            width: 280px; height: 3px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50px; overflow: hidden;
-        }
-
-        .loader-fill {
-            width: 0%; height: 100%;
-            background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
-            background-size: 200% 100%;
-            animation: loading 8s linear forwards, shine 2s infinite;
-        }
-
-        @keyframes loading { to { width: 100%; } }
-        @keyframes shine { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
-        @keyframes fadeInOut { from { opacity: 0.6; } to { opacity: 1; } }
-
-        /* 2. Modern Password Screen */
-        #login-screen {
-            display: none;
-            flex-direction: column;
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #444;
+            display: flex;
+            justify-content: center;
             align-items: center;
-            z-index: 500;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
         }
-
-        .glass-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            padding: 50px 40px;
-            border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-            text-align: center;
-            width: 350px;
-            animation: slideUp 0.8s ease-out;
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .glass-card h2 {
-            color: var(--text-white);
-            font-weight: 300;
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            letter-spacing: 2px;
-        }
-
-        .input-group {
-            position: relative;
-            margin-bottom: 30px;
-        }
-
-        input[type="password"] {
-            width: 100%;
-            padding: 15px;
-            background: rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .card {
+            background: #ffffff;
+            max-width: 650px;
+            padding: 40px;
             border-radius: 12px;
-            color: white;
-            font-size: 18px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-top: 5px solid #e74c3c; /* Red border to indicate stop */
             text-align: center;
-            outline: none;
-            transition: 0.3s;
-            box-sizing: border-box;
         }
-
-        input[type="password"]:focus {
-            border-color: var(--accent-blue);
-            box-shadow: 0 0 15px rgba(0, 162, 255, 0.3);
+        .brand {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
         }
-
-        .login-btn {
-            width: 100%;
-            padding: 15px;
-            background: var(--accent-blue);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-weight: 600;
+        .institution {
             font-size: 16px;
-            cursor: pointer;
-            transition: 0.3s;
-            letter-spacing: 1px;
-            box-shadow: 0 10px 20px rgba(0, 162, 255, 0.2);
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
         }
-
-        .login-btn:hover {
-            background: #008be0;
-            transform: translateY(-2px);
-            box-shadow: 0 15px 25px rgba(0, 162, 255, 0.4);
+        .status-icon {
+            font-size: 50px;
+            color: #e74c3c;
+            margin-bottom: 20px;
         }
-
-        #error-msg {
-            color: #ff4d4d;
-            font-size: 13px;
-            margin-top: 20px;
-            display: none;
-            font-weight: 400;
+        h1 {
+            font-size: 24px;
+            color: #c0392b;
+            margin-bottom: 15px;
+        }
+        p {
+            line-height: 1.8;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .english-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed #ccc;
+        }
+        .contact-info {
+            background: #fdf2f2;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #555;
+            margin-top: 25px;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #95a5a6;
         }
     </style>
 </head>
 <body>
 
-    <div id="splash-screen">
-        <div class="logo-text">Aura iot-IBBAGMUWA MODEl SCHOOL</div>
-        <div class="loader-wrap">
-            <div class="loader-fill"></div>
-        </div>
-    </div>
-
-    <div id="login-screen">
-        <div class="glass-card">
-            <h2>SECURE ACCESS</h2>
-            <div class="input-group">
-                <input type="password" id="passInput" placeholder="Enter PIN">
-            </div>
-            <button class="login-btn" onclick="checkPassword()">UNLOCK</button>
-            <p id="error-msg">⚠️ Access Denied. Try Again.</p>
-        </div>
-    </div>
-
-    <script>
-        // Splash Screen Timer
-        setTimeout(() => {
-            const splash = document.getElementById('splash-screen');
-            splash.style.opacity = '0';
-            setTimeout(() => {
-                splash.style.display = 'none';
-                document.getElementById('login-screen').style.display = 'flex';
-            }, 1000);
-        }, 8000);
-
-        // Password Verification
-        function checkPassword() {
-            const pass = document.getElementById('passInput').value;
-            if (pass === "Aura-2626") {
-                window.location.href = "           https://aura2626705.github.io/Iamv-main/       ";
-            } else {
-                const err = document.getElementById('error-msg');
-                err.style.display = 'block';
-                document.getElementById('passInput').value = "";
-                // Shaking effect for error
-                const card = document.querySelector('.glass-card');
-                card.style.animation = 'none';
-                card.offsetHeight; 
-                card.style.animation = 'shake 0.4s ease-in-out';
-            }
-        }
-
-        // Add CSS Shake Animation
-        const style = document.createElement('style');
-        style.innerHTML = `
-            @keyframes shake {
-                0%, 100% { transform: translateX(0); }
-                25% { transform: translateX(-10px); }
-                75% { transform: translateX(10px); }
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
-</body>
-</html>
+<div class="card">
+    <div class="brand">AURA IoT</div>
+    <div class="institution">Ibbagamuwa Model School - Management System</div>
     
-  </body>
-  
+    <div class="status-icon">⚠️</div>
+
+    <div class="sinhala-section">
+        <h1>සේවාවන් අත්හිටුවා ඇත</h1>
+        <p>
+            පද්ධතිය වෙත පවතින ඉල්ලුම සහ පරිශීලකයන්ගේ අඩුවීම හේතුවෙන්, ආයතනික තීරණයක් මත මෙම පද්ධතිය පවත්වාගෙන යාම තාවකාලිකව අත්හිටුවීමට අප තීරණය කර ඇත. 
+            මෙතෙක් කල් අප සමග රැඳී සිටි සියලුම දෙනාට අපගේ ස්තූතිය පුද කර සිටිමු.
+        </p>
+    </div>
+
+    <div class="english-section">
+        <h1>Services Discontinued</h1>
+        <p>
+            Due to low user engagement and declining demand, we have decided to discontinue the system services. 
+            Maintaining the platform is no longer feasible under current conditions. We appreciate your support throughout this journey.
+        </p>
+    </div>
+
+    <div class="contact-info">
+        වැඩිදුර තොරතුරු සඳහා විමසන්න / For inquiries: <br>
+        <strong>elfobal@outlook.com | 0113304820 | +94779024759</strong>
+    </div>
+
+    <div class="footer">
+        © 2026 Aura IoT | Developed for Ibbagamuwa Model School
+    </div>
+</div>
+
+</body>
 </html>
